@@ -30,6 +30,26 @@ class Event
         $this->sequence_id = $sequence_id;
     }
 
+    public function getAggregateId()
+    {
+        return $this->aggregate_id;
+    }
+
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    public function getSequenceId()
+    {
+        return $this->sequence_id;
+    }
+
     public function toArray()
     {
         return [
