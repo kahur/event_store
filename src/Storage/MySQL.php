@@ -18,7 +18,7 @@ class MySQL implements StorageInterface
      * MySQL constructor.
      * @param Model $storage
      */
-    public function __construct(\PDO $storage)
+    public function __construct(\Phalcon\Db\Adapter\Pdo\Mysql  $storage)
     {
         $this->storage = $storage;
     }
@@ -33,7 +33,6 @@ class MySQL implements StorageInterface
         if(!is_array($data)) {
             throw new \RuntimeException('Wrong format of data given');
         }
-
 
         if(!$this->storage->insert('events', $data, ['aggregate_id', 'name' ,'content', 'sequence_id'])) {
             throw new \RuntimeException(
